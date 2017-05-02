@@ -26,19 +26,7 @@ const vm = require('vm');
 
 assert.throws(function() {
   vm.isContext('string is not supported');
-<<<<<<< 941e82ab6b69d8176a18e9933b11852107187ce1
-<<<<<<< d4c1d3766c3da022d6f73160b4b86236052d22a8
-<<<<<<< 8db39971b768118ce2c0c34d88788daea14f52c9
 }, /^TypeError: sandbox must be an object$/);
-=======
-}, /TypeError/);
->>>>>>> test-vm-is-context.js : changed the assert.thows object to regex and added score for sanbox object
-=======
-}, /^TypeError: sandbox must be an object$/);
->>>>>>> vm: changed the error from constructor to regular expression
-=======
-}, /TypeError/);
->>>>>>> test-vm-is-context.js : changed the assert.thows object to regex and added score for sanbox object
 
 assert.strictEqual(vm.isContext({}), false);
 assert.strictEqual(vm.isContext([]), false);
@@ -46,8 +34,6 @@ assert.strictEqual(vm.isContext([]), false);
 assert.strictEqual(vm.isContext(vm.createContext()), true);
 assert.strictEqual(vm.isContext(vm.createContext([])), true);
 
-{
   const sandbox = { foo: 'bar' };
   vm.createContext(sandbox);
   assert.strictEqual(vm.isContext(sandbox), true);
-}
